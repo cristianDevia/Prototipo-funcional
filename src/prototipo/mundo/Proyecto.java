@@ -14,7 +14,7 @@ public class Proyecto
 	public Proyecto()
 	{
 		arregloPropuesta = new ArrayList();
-		directorio = "C:\\Users\\Cristian Devia\\Desktop\\Unibague.lnk";
+		directorio = "D:\\CDevia";
 	}
 	
 	public void registrarPropuesta(PropuestaGrado propuesta) throws Exception
@@ -37,5 +37,28 @@ public class Proyecto
 		
 		}
 	
+	}
+	
+	public String darNombre()
+	{
+		String nombre = "";
+		
+		for (int i = 0; i < arregloPropuesta.size(); i++) 
+		{
+			PropuestaGrado aux = (PropuestaGrado) arregloPropuesta.get(i);
+			String cast = aux.getPropuesta().getName();
+			 
+			 nombre = cast;
+		}
+		
+		return nombre;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Proyecto [darNombre()="+ darNombre() + "]";
 	}
 }

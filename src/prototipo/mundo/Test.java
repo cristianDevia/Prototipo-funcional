@@ -10,11 +10,9 @@ public class Test {
 		Proyecto proyecto = new Proyecto();
 		
 		try {
-			File f = new File("");
-			proyecto.registrarPropuesta( new PropuestaGrado("P1", f));
-			proyecto.registrarPropuesta( new PropuestaGrado("P1", f));
 			
-			System.out.println(proyecto.consultarNombre());
+			proyecto.registrarPropuesta( new PropuestaGrado("D:\\CDevia"));
+			System.out.println(proyecto.darNombre());
 		} 
 		catch (Exception e) 
 		{
