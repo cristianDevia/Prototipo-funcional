@@ -19,9 +19,10 @@ public class PropuestaGrado
 	
 	private Estudiante estudiante;
 	
-	public PropuestaGrado(String pPropuesta)
+	public PropuestaGrado(String pPropuesta, Estudiante estu)
 	{
 		propuesta = new File(pPropuesta);
+		estudiante = estu;
 	}
 
 	/**

@@ -17,7 +17,7 @@ public class Proyecto
 		directorio = "D:\\Unibague";
 	}
 	
-	public void registrarPropuesta(PropuestaGrado propuesta) throws Exception
+	public void registrarPropuesta(PropuestaGrado propuesta, Estudiante estu) throws Exception
 	{
 		
 		File f = new File(directorio);
@@ -30,7 +30,7 @@ public class Proyecto
 				
 				if(elementos[i].isFile() && elementos[i].getName().equalsIgnoreCase(propuesta.getPropuesta().getName()))
 				{
-					arregloPropuesta.add(new PropuestaGrado(elementos[i].getPath()));
+					arregloPropuesta.add(new PropuestaGrado(elementos[i].getPath(), estu));
 					
 				}
 			}
@@ -48,12 +48,47 @@ public class Proyecto
 		{
 			PropuestaGrado aux = (PropuestaGrado) arregloPropuesta.get(i);
 			String cast = aux.getPropuesta().getName();
+			String cast1 = aux.getEstudiante().getCodigo();
 			 
-			temp.add(cast);
+			String x = cast + cast1;
+			
+			if(cast != null && cast !="" && cast1 != null && cast1 != "")
+			{
+				temp.add(x);
+			
+			}
 			
 		}
 		
 		return temp;
+	}
+
+	/**
+	 * @return the arregloPropuesta
+	 */
+	public ArrayList getArregloPropuesta() {
+		return arregloPropuesta;
+	}
+
+	/**
+	 * @return the directorio
+	 */
+	public String getDirectorio() {
+		return directorio;
+	}
+
+	/**
+	 * @param arregloPropuesta the arregloPropuesta to set
+	 */
+	public void setArregloPropuesta(ArrayList arregloPropuesta) {
+		this.arregloPropuesta = arregloPropuesta;
+	}
+
+	/**
+	 * @param directorio the directorio to set
+	 */
+	public void setDirectorio(String directorio) {
+		this.directorio = directorio;
 	}
 
 }

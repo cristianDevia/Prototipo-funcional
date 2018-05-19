@@ -11,6 +11,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import prototipo.mundo.Estudiante;
 import prototipo.mundo.PropuestaGrado;
 import prototipo.mundo.Proyecto;
 
@@ -60,8 +61,17 @@ public class PP extends JFrame
     
 			try 
 			{
+				String pNombre = JOptionPane.showInputDialog("Ingrese el nombre del estudiante", "");
+				String pCodigo = JOptionPane.showInputDialog("Ingrese el codigo del estudiante", "");
+				String pSemestre = JOptionPane.showInputDialog("Ingrese el semestre del estudiante (numero entero)", "");
+				int castSemestre = Integer.parseInt(pSemestre);	
+				String pPrograma = JOptionPane.showInputDialog("Ingrese el programa del estudiante", "");
 				
-				proyecto.registrarPropuesta(new PropuestaGrado(ultimoDirectorio));
+		
+				
+				Estudiante estu = new Estudiante(pNombre, pCodigo, castSemestre, pPrograma);
+				
+				proyecto.registrarPropuesta(new PropuestaGrado(ultimoDirectorio, estu), estu);
 					
 				System.out.println(proyecto.darNombre());
 				JOptionPane.showMessageDialog(null, "Se agregado correctamente");
@@ -76,21 +86,21 @@ public class PP extends JFrame
 	
 	
 	public void consultarPropuesta()
-	{
-		ArrayList x = proyecto.darNombre();
+	{	
 		
-		String y = JOptionPane.showInputDialog(null, "");
-		
-		String almacenar = "";
-		
-		for (int i = 0; i < x.size(); i++)
+		for (int i = 0; i < proyecto.getArregloPropuesta().size(); i++)
 		{
-			String cast = (String) x.get(i);
 			
-			if(y.equalsIgnoreCase(cast))
+			String y = JOptionPane.showInputDialog("Ingrese el codigo del estudiante", "");
+			
+			PropuestaGrado aux = (PropuestaGrado) proyecto.getArregloPropuesta().get(i);
+			String aux2 = aux.getEstudiante().getCodigo();
+
+			if(y.equalsIgnoreCase(aux2))
 			{
-				almacenar = y;
-				JOptionPane.showMessageDialog(null, almacenar.toString());
+				String aux3 = aux.getPropuesta().getName();
+				
+				JOptionPane.showMessageDialog(null, aux3.toString());
 			}
 		}
 		

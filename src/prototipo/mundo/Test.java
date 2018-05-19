@@ -9,11 +9,14 @@ public class Test {
 		
 		Proyecto proyecto = new Proyecto();
 		Estudiante estu1 = new Estudiante("Cristian", "2220161013", 5, "Ing.Sistemas");
+		Estudiante estu2 = new Estudiante("Paola", "2220161006", 5, "Ing.Sistemas");
 		
 		
 		try {
 			
-			proyecto.registrarPropuesta( new PropuestaGrado(""));
+			proyecto.registrarPropuesta( new PropuestaGrado("D:\\Unibague\\Credito Universidad.jpg", estu1), estu1);
+			proyecto.registrarPropuesta( new PropuestaGrado("D:\\Unibague\\Matricula 2017B.pdf", estu2), estu2);
+			
 			System.out.println(proyecto.darNombre());
 		} 
 		catch (Exception e) 
