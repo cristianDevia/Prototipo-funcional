@@ -17,7 +17,7 @@ public class Proyecto
 		directorio = "D:\\Unibague";
 	}
 	
-	public void registrarPropuesta(PropuestaGrado propuesta) throws Exception
+	public void directorio() throws Exception
 	{
 		
 		File f = new File(directorio);
@@ -39,7 +39,7 @@ public class Proyecto
 	
 	}
 	
-	public ArrayList darNombre()
+	public ArrayList darNombreArchivosDirectorio()
 	{
 		
 		ArrayList<String> temp = new ArrayList<>();
@@ -55,5 +55,24 @@ public class Proyecto
 		
 		return temp;
 	}
+	
+	public String consultarPropuesta(String pCodigo)
+	{
+		String consulta = "";
+		
+		for (int i = 0; i < arregloPropuesta.size(); i++) 
+		{
+			PropuestaGrado aux = (PropuestaGrado) arregloPropuesta.get(i);
+			String cast = aux.getPropuesta().getName();
+			
+			if(cast.equalsIgnoreCase(pCodigo))
+			{
+				consulta = cast;
+			}
+		}
+		
+		return consulta;
+	}
+	
 
 }

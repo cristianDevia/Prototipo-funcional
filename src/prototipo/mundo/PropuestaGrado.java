@@ -17,10 +17,9 @@ public class PropuestaGrado
 	
 	private File propuesta;
 	
-	public PropuestaGrado(String pNombrePropuesta, File pPropuesta)
+	public PropuestaGrado(String pPropuesta)
 	{
-		nombrePropuesta = pNombrePropuesta;
-		propuesta = pPropuesta;
+		propuesta = new File(pPropuesta);
 	}
 
 	/**
@@ -49,6 +48,15 @@ public class PropuestaGrado
 	 */
 	public void setPropuesta(File propuesta) {
 		this.propuesta = propuesta;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "PropuestaGrado [nombrePropuesta=" + nombrePropuesta + ", propuesta=" + propuesta
+				+ ", getNombrePropuesta()=" + getNombrePropuesta() + ", getPropuesta()=" + getPropuesta() + "]";
 	}
 	
 }

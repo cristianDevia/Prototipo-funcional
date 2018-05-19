@@ -11,8 +11,8 @@ public class Test {
 		
 		try {
 			
-			proyecto.registrarPropuesta( new PropuestaGrado(""));
-			System.out.println(proyecto.darNombre());
+			proyecto.directorio();
+			System.out.println(proyecto.darNombreArchivosDirectorio());
 		} 
 		catch (Exception e) 
 		{
