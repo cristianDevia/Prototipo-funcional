@@ -13,6 +13,8 @@ public class Test {
 			
 			proyecto.directorio();
 			System.out.println(proyecto.darNombreArchivosDirectorio());
+			
+			System.out.println(proyecto.consultarPropuesta("Credito Universidad.jpg"));
 		} 
 		catch (Exception e) 
 		{
