@@ -10,7 +10,7 @@ public class Estudiante
 	/**
 	 * atributo que modela el codigo de un estudiante
 	 */
-	private int codigo;
+	private String codigo;
 	
 	/**
 	 * atributo que modela el semestre de un estudiante
@@ -30,7 +30,7 @@ public class Estudiante
 	 * @param pProgamaAcademico, programa academico de un estudiante nuevo
 	 * @post Crea un estudiante nuevo
 	 */
-	public Estudiante( String pNombre, int pCodigo, int pSemestre, String pProgamaAcademico)
+	public Estudiante( String pNombre, String pCodigo, int pSemestre, String pProgamaAcademico)
 	{
 		nombre = pNombre;
 		codigo = pCodigo;
@@ -55,14 +55,14 @@ public class Estudiante
 	/**
 	 * @return the codigo
 	 */
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
 	/**
 	 * @param codigo the codigo to set
 	 */
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

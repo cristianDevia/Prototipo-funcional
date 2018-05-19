@@ -17,9 +17,13 @@ public class PropuestaGrado
 	
 	private File propuesta;
 	
-	public PropuestaGrado(String pPropuesta)
+	private Estudiante estudiante;
+	
+	public PropuestaGrado(String pPropuesta, String pNombrePropuesta, Estudiante pEstudiante)
 	{
 		propuesta = new File(pPropuesta);
+		nombrePropuesta = pNombrePropuesta;
+		estudiante = pEstudiante;
 	}
 
 	/**
@@ -48,6 +52,20 @@ public class PropuestaGrado
 	 */
 	public void setPropuesta(File propuesta) {
 		this.propuesta = propuesta;
+	}
+
+	/**
+	 * @return the estudiante
+	 */
+	public Estudiante getEstudiante() {
+		return estudiante;
+	}
+
+	/**
+	 * @param estudiante the estudiante to set
+	 */
+	public void setEstudiante(Estudiante estudiante) {
+		this.estudiante = estudiante;
 	}
 
 

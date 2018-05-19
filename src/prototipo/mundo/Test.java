@@ -8,10 +8,12 @@ public class Test {
 	
 		
 		Proyecto proyecto = new Proyecto();
+		Estudiante estu1 = new Estudiante("Cristian", "2220161013", 5, "Ing.Sistemas");
+		
 		
 		try {
 			
-			proyecto.registrarPropuesta( new PropuestaGrado(""));
+			proyecto.registrarPropuesta( new PropuestaGrado("", "", estu1 ));
 			System.out.println(proyecto.darNombre());
 		} 
 		catch (Exception e) 

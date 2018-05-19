@@ -30,7 +30,7 @@ public class Proyecto
 				
 				if(elementos[i].isFile() && elementos[i].getName().equalsIgnoreCase(propuesta.getPropuesta().getName()))
 				{
-					arregloPropuesta.add(new PropuestaGrado(elementos[i].getPath()));
+					arregloPropuesta.add(new PropuestaGrado(elementos[i].getPath(), directorio, null));
 					
 				}
 			}
