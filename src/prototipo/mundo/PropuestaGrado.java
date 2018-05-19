@@ -50,13 +50,7 @@ public class PropuestaGrado
 		this.propuesta = propuesta;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "PropuestaGrado [nombrePropuesta=" + nombrePropuesta + ", propuesta=" + propuesta
-				+ ", getNombrePropuesta()=" + getNombrePropuesta() + ", getPropuesta()=" + getPropuesta() + "]";
-	}
+
+	
 	
 }
