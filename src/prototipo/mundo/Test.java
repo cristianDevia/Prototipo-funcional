@@ -12,6 +12,7 @@ public class Test {
 		try {
 			File f = new File("");
 			proyecto.registrarPropuesta( new PropuestaGrado("P1", f));
+			proyecto.registrarPropuesta( new PropuestaGrado("P1", f));
 			
 			System.out.println(proyecto.consultarNombre());
 		} 

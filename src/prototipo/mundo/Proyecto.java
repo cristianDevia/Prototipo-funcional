@@ -6,45 +6,36 @@ import java.util.ArrayList;
 public class Proyecto 
 {
 
-	private ArrayList<File> arregloPropuesta;
+	private ArrayList arregloPropuesta;
+	
+	private String directorio;
+	
 	
 	public Proyecto()
 	{
-		arregloPropuesta = new ArrayList<File>();
+		arregloPropuesta = new ArrayList();
+		directorio = "C:\\Users\\Cristian Devia\\Desktop\\Unibague.lnk";
 	}
 	
 	public void registrarPropuesta(PropuestaGrado propuesta) throws Exception
 	{
-		File f = new File("C:\\Users\\Cristian Devia\\Desktop\\Matricula.pdf");
-		String nombre = f.getName();
 		
-		for(int i = 0; i<arregloPropuesta.size(); i++)
+		File f = new File(directorio);
+		File[] elementos = f.listFiles();
+		
+		if(elementos != null)
 		{
-			if(nombre.equals(propuesta.getNombrePropuesta()))
+			for(int i = 0; i<elementos.length; i++)
 			{
-				throw new Exception();
+				
+				if(elementos[i].isFile())
+				{
+					arregloPropuesta.add(new PropuestaGrado(elementos[i].getAbsolutePath()));
+					
+				}
 			}
-		}
 		
-		arregloPropuesta.add(f);
-	}
-	
-	public String consultarNombre()
-	{
-		
-		String nombre = "";
-		
-		for (int i = 0; i < arregloPropuesta.size(); i++)
-		{
-			File aux = arregloPropuesta.get(i);
-			
-			String x = aux.getName();
-			
-			nombre = x;
-			
-			return x;
 		}
 	
-		return nombre;
 	}
 }
