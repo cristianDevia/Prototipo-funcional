@@ -14,10 +14,10 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import prototipo.mundo.Estudiante;
-import prototipo.mundo.PropuestaGrado;
+import prototipo.mundo.PropuestaDeGrado;
 import prototipo.mundo.Proyecto;
 
-public class PP extends JFrame
+public class InterfazPrincipal extends JFrame
 {
     // -----------------------------------------------------------------
     // Atributos
@@ -31,10 +31,10 @@ public class PP extends JFrame
 	
 	private PanelInterfaz panelPrincipal;
 	
-	public PP()
+	public InterfazPrincipal()
 	{
 		
-		proyecto = new Proyecto("D:\\Unibague");
+		proyecto = new Proyecto("C:\\Users\\Paola\\Documents");
 		
         setLayout( new BorderLayout( ) );
         setTitle( "Consulta" );
@@ -72,7 +72,7 @@ public class PP extends JFrame
 
 				Estudiante estu = new Estudiante(pNombre, pCodigo, castSemestre, pPrograma);
 				
-				proyecto.registrarPropuesta(new PropuestaGrado(ultimoDirectorio, estu), estu);
+				proyecto.registrarPropuesta(new PropuestaDeGrado(ultimoDirectorio, estu), estu);
 					
 				System.out.println(proyecto.darNombre());
 				JOptionPane.showMessageDialog(null, "Se agregado correctamente");
@@ -94,7 +94,7 @@ public class PP extends JFrame
 			
 			String y = JOptionPane.showInputDialog("Ingrese el codigo del estudiante", "");
 			
-			PropuestaGrado aux = (PropuestaGrado) proyecto.getArregloPropuesta().get(i);
+			PropuestaDeGrado aux = (PropuestaDeGrado) proyecto.getArregloPropuesta().get(i);
 			String aux2 = aux.getEstudiante().getCodigo();
 
 			if(y.equalsIgnoreCase(aux2))
@@ -141,7 +141,7 @@ public class PP extends JFrame
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        PP interfaz = new PP( );
+        InterfazPrincipal interfaz = new InterfazPrincipal( );
         interfaz.setVisible( true );
 	}
 

@@ -6,18 +6,22 @@ import java.util.ArrayList;
 public class Proyecto 
 {
 
-	private ArrayList arregloPropuesta;
+	private ArrayList propuestasGrado;
+	private ArrayList trabajosGrado;
+	private ArrayList jurados;
 	
 	private String directorio;
 	
 	
 	public Proyecto(String Pruta)
 	{
-		arregloPropuesta = new ArrayList();
+		propuestasGrado = new ArrayList();
+		trabajosGrado = new ArrayList();
+		jurados = new ArrayList();
 		directorio = Pruta;
 	}
 	
-	public void registrarPropuesta(PropuestaGrado propuesta, Estudiante estu) throws Exception
+	public void registrarPropuesta(PropuestaDeGrado propuesta, Estudiante estu) throws Exception
 	{
 		
 		File f = new File(directorio);
@@ -30,7 +34,7 @@ public class Proyecto
 				
 				if(elementos[i].isFile() && elementos[i].getName().equalsIgnoreCase(propuesta.getPropuesta().getName()))
 				{
-					arregloPropuesta.add(new PropuestaGrado(elementos[i].getPath(), estu));
+					propuestasGrado.add(new PropuestaDeGrado(elementos[i].getPath(), estu));
 					
 				}
 			}
@@ -44,9 +48,9 @@ public class Proyecto
 		
 		ArrayList<String> temp = new ArrayList<>();
 		
-		for (int i = 0; i < arregloPropuesta.size(); i++) 
+		for (int i = 0; i < propuestasGrado.size(); i++) 
 		{
-			PropuestaGrado aux = (PropuestaGrado) arregloPropuesta.get(i);
+			PropuestaDeGrado aux = (PropuestaDeGrado) propuestasGrado.get(i);
 			String cast = aux.getPropuesta().getName();
 			String cast1 = aux.getEstudiante().getCodigo();
 			 
@@ -67,7 +71,7 @@ public class Proyecto
 	 * @return the arregloPropuesta
 	 */
 	public ArrayList getArregloPropuesta() {
-		return arregloPropuesta;
+		return propuestasGrado;
 	}
 
 	/**
@@ -81,7 +85,7 @@ public class Proyecto
 	 * @param arregloPropuesta the arregloPropuesta to set
 	 */
 	public void setArregloPropuesta(ArrayList arregloPropuesta) {
-		this.arregloPropuesta = arregloPropuesta;
+		this.propuestasGrado = arregloPropuesta;
 	}
 
 	/**

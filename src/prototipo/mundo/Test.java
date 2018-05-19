@@ -14,8 +14,8 @@ public class Test {
 		
 		try {
 			
-			proyecto.registrarPropuesta( new PropuestaGrado("D:\\Unibague\\Credito Universidad.jpg", estu1), estu1);
-			proyecto.registrarPropuesta( new PropuestaGrado("D:\\Unibague\\Matricula 2017B.pdf", estu2), estu2);
+			proyecto.registrarPropuesta( new PropuestaDeGrado("D:\\Unibague\\Credito Universidad.jpg", estu1), estu1);
+			proyecto.registrarPropuesta( new PropuestaDeGrado("D:\\Unibague\\Matricula 2017B.pdf", estu2), estu2);
 			
 			System.out.println(proyecto.darNombre());
 		} 

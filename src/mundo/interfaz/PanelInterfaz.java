@@ -19,7 +19,7 @@ public class PanelInterfaz extends JPanel implements ActionListener
 	public final static String AGREGAR = "Agregar";
 	public final static String CONSULTAR = "Consultar";
 	
-	private PP principal;
+	private InterfazPrincipal principal;
 	
 	   /**
      * Botón agregar
@@ -33,7 +33,7 @@ public class PanelInterfaz extends JPanel implements ActionListener
     
     
     
-    public  PanelInterfaz (PP ventana)
+    public  PanelInterfaz (InterfazPrincipal ventana)
     {
     	 principal = ventana;
 

@@ -2,7 +2,7 @@ package prototipo.mundo;
 
 import java.io.File;
 
-public class PropuestaGrado 
+public class PropuestaDeGrado 
 {
 
 	public final static String MODALIDAD1 = "Monografia";
@@ -19,7 +19,7 @@ public class PropuestaGrado
 	
 	private Estudiante estudiante;
 	
-	public PropuestaGrado(String pPropuesta, Estudiante estu)
+	public PropuestaDeGrado(String pPropuesta, Estudiante estu)
 	{
 		propuesta = new File(pPropuesta);
 		estudiante = estu;
