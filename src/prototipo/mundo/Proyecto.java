@@ -28,9 +28,9 @@ public class Proyecto
 			for(int i = 0; i<elementos.length; i++)
 			{
 				
-				if(elementos[i].isFile())
+				if(elementos[i].isFile() && elementos[i].getName().equalsIgnoreCase(propuesta.getPropuesta().getName()))
 				{
-					arregloPropuesta.add(new PropuestaGrado(elementos[i].getAbsolutePath()));
+					arregloPropuesta.add(new PropuestaGrado(elementos[i].getPath()));
 					
 				}
 			}

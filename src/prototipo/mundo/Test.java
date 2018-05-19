@@ -11,7 +11,7 @@ public class Test {
 		
 		try {
 			
-			proyecto.registrarPropuesta( new PropuestaGrado(""));
+			proyecto.registrarPropuesta( new PropuestaGrado("Credito Universidad.jpg"));
 			System.out.println(proyecto.darNombre());
 		} 
 		catch (Exception e) 
