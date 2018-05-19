@@ -12,8 +12,7 @@ public class Test {
 		try {
 			
 			proyecto.registrarPropuesta( new PropuestaGrado(""));
-			
-			System.out.println(proyecto.consultarNombre());
+			System.out.println(proyecto.darNombre());
 		} 
 		catch (Exception e) 
 		{
