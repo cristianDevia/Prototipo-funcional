@@ -14,7 +14,7 @@ public class Proyecto
 	public Proyecto()
 	{
 		arregloPropuesta = new ArrayList();
-		directorio = "D:\\Unibague";
+		directorio = "‪‪D:\\Unibague";
 	}
 	
 	public void registrarPropuesta(PropuestaGrado propuesta, Estudiante estu) throws Exception

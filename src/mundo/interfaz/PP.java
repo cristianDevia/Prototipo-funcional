@@ -1,6 +1,7 @@
 package mundo.interfaz;
 
 import java.awt.BorderLayout;
+import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -35,6 +36,7 @@ public class PP extends JFrame
 	
 	public PP()
 	{
+		
 		proyecto = new Proyecto();
 		
         setLayout( new BorderLayout( ) );
@@ -109,19 +111,9 @@ public class PP extends JFrame
 				
 				if(opciones == JOptionPane.YES_OPTION)
 				{
-					try {
-						
-						String url = aux.getPropuesta().getAbsolutePath();
-						
-						ProcessBuilder p = new ProcessBuilder();
-						
-						p.command("C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe" , url);	
-						p.start();
-						
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+					String url = aux.getPropuesta().getAbsolutePath();
+					
+					abrirarchivo(url);
 				}
 				
 				else if(opciones == JOptionPane.NO_OPTION)
@@ -132,6 +124,22 @@ public class PP extends JFrame
 		}
 		
 	}
+	
+	public void abrirarchivo(String archivo){
+
+	     try {
+
+	            File objetofile = new File (archivo);
+	            Desktop.getDesktop().open(objetofile);
+
+	     }catch (IOException ex) {
+
+	            System.out.println(ex);
+
+	     }
+
+	}                         
+
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
