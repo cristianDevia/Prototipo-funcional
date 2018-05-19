@@ -43,6 +43,7 @@ public class Proyecto
 	
 	}
 	
+	
 	public ArrayList darNombre()
 	{
 		
@@ -93,6 +94,22 @@ public class Proyecto
 	 */
 	public void setDirectorio(String directorio) {
 		this.directorio = directorio;
+	}
+
+	public ArrayList getTrabajosGrado() {
+		return trabajosGrado;
+	}
+
+	public void setTrabajosGrado(ArrayList trabajosGrado) {
+		this.trabajosGrado = trabajosGrado;
+	}
+
+	public ArrayList getJurados() {
+		return jurados;
+	}
+
+	public void setJurados(ArrayList jurados) {
+		this.jurados = jurados;
 	}
 
 }
