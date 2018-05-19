@@ -3,10 +3,9 @@ package mundo.interfaz;
 import java.awt.BorderLayout;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.OutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -20,6 +19,11 @@ public class PP extends JFrame
     // -----------------------------------------------------------------
     // Atributos
     // -----------------------------------------------------------------
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4634653581731751636L;
 
 	private Proyecto proyecto;
 	
@@ -87,11 +91,11 @@ public class PP extends JFrame
 	
 	public void consultarPropuesta()
 	{	
+		String y = JOptionPane.showInputDialog("Ingrese el codigo del estudiante", "");
 		
 		for (int i = 0; i < proyecto.getArregloPropuesta().size(); i++)
 		{
 			
-			String y = JOptionPane.showInputDialog("Ingrese el codigo del estudiante", "");
 			
 			PropuestaGrado aux = (PropuestaGrado) proyecto.getArregloPropuesta().get(i);
 			String aux2 = aux.getEstudiante().getCodigo();
@@ -99,8 +103,31 @@ public class PP extends JFrame
 			if(y.equalsIgnoreCase(aux2))
 			{
 				String aux3 = aux.getPropuesta().getName();
-				
 				JOptionPane.showMessageDialog(null, aux3.toString());
+				
+				int opciones = JOptionPane.showConfirmDialog(null, "¿Desea abrir este archivo?");
+				
+				if(opciones == JOptionPane.YES_OPTION)
+				{
+					try {
+						
+						String url = aux.getPropuesta().getAbsolutePath();
+						
+						ProcessBuilder p = new ProcessBuilder();
+						
+						p.command("C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe" , url);	
+						p.start();
+						
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				
+				else if(opciones == JOptionPane.NO_OPTION)
+				{
+					JOptionPane.showMessageDialog(null, "Gracias :v");
+				}
 			}
 		}
 		
