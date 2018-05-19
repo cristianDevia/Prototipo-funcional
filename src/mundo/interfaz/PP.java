@@ -5,8 +5,10 @@ import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -21,11 +23,6 @@ public class PP extends JFrame
     // Atributos
     // -----------------------------------------------------------------
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 4634653581731751636L;
-
 	private Proyecto proyecto;
 	
 	private JFileChooser seleccionarArchivo;
@@ -37,7 +34,7 @@ public class PP extends JFrame
 	public PP()
 	{
 		
-		proyecto = new Proyecto();
+		proyecto = new Proyecto("D:\\Unibague");
 		
         setLayout( new BorderLayout( ) );
         setTitle( "Consulta" );
@@ -72,9 +69,7 @@ public class PP extends JFrame
 				String pSemestre = JOptionPane.showInputDialog("Ingrese el semestre del estudiante (numero entero)", "");
 				int castSemestre = Integer.parseInt(pSemestre);	
 				String pPrograma = JOptionPane.showInputDialog("Ingrese el programa del estudiante", "");
-				
-		
-				
+
 				Estudiante estu = new Estudiante(pNombre, pCodigo, castSemestre, pPrograma);
 				
 				proyecto.registrarPropuesta(new PropuestaGrado(ultimoDirectorio, estu), estu);
@@ -93,17 +88,18 @@ public class PP extends JFrame
 	
 	public void consultarPropuesta()
 	{	
-		String y = JOptionPane.showInputDialog("Ingrese el codigo del estudiante", "");
 		
 		for (int i = 0; i < proyecto.getArregloPropuesta().size(); i++)
 		{
 			
+			String y = JOptionPane.showInputDialog("Ingrese el codigo del estudiante", "");
 			
 			PropuestaGrado aux = (PropuestaGrado) proyecto.getArregloPropuesta().get(i);
 			String aux2 = aux.getEstudiante().getCodigo();
 
 			if(y.equalsIgnoreCase(aux2))
 			{
+				
 				String aux3 = aux.getPropuesta().getName();
 				JOptionPane.showMessageDialog(null, aux3.toString());
 				
@@ -120,6 +116,8 @@ public class PP extends JFrame
 				{
 					JOptionPane.showMessageDialog(null, "Gracias :v");
 				}
+
+
 			}
 		}
 		
