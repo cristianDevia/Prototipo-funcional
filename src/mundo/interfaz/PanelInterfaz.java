@@ -65,7 +65,7 @@ public class PanelInterfaz extends JPanel implements ActionListener
 		
 		else if(CONSULTAR.equals( e.getActionCommand( ) ))
 		{
-			principal.consultarPropuesta();
+			
 		}
 		
 	}

@@ -4,9 +4,7 @@ import java.awt.BorderLayout;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
 
-import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -62,9 +60,7 @@ public class PP extends JFrame
 			{
 				
 				proyecto.registrarPropuesta(new PropuestaGrado(ultimoDirectorio));
-					
 				System.out.println(proyecto.darNombre());
-				JOptionPane.showMessageDialog(null, "Se agregado correctamente");
 				
 			} catch (Exception e) 
 				{
@@ -72,28 +68,6 @@ public class PP extends JFrame
 				}
 		}
 	
-	}
-	
-	
-	public void consultarPropuesta()
-	{
-		ArrayList x = proyecto.darNombre();
-		
-		String y = JOptionPane.showInputDialog(null, "");
-		
-		String almacenar = "";
-		
-		for (int i = 0; i < x.size(); i++)
-		{
-			String cast = (String) x.get(i);
-			
-			if(y.equalsIgnoreCase(cast))
-			{
-				almacenar = y;
-				JOptionPane.showMessageDialog(null, almacenar.toString());
-			}
-		}
-		
 	}
 	
 	public static void main(String[] args) {
