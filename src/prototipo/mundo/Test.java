@@ -13,7 +13,7 @@ public class Test {
 		
 		try {
 			
-			proyecto.registrarPropuesta( new PropuestaGrado("", "", estu1 ));
+			proyecto.registrarPropuesta( new PropuestaGrado(""));
 			System.out.println(proyecto.darNombre());
 		} 
 		catch (Exception e) 
