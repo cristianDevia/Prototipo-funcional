@@ -11,10 +11,10 @@ public class Proyecto
 	private String directorio;
 	
 	
-	public Proyecto()
+	public Proyecto(String Pruta)
 	{
 		arregloPropuesta = new ArrayList();
-		directorio = "‪‪D:\\Unibague";
+		directorio = Pruta;
 	}
 	
 	public void registrarPropuesta(PropuestaGrado propuesta, Estudiante estu) throws Exception
