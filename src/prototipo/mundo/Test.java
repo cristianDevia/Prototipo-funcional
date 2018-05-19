@@ -11,7 +11,7 @@ public class Test {
 		
 		try {
 			
-			proyecto.registrarPropuesta( new PropuestaGrado("D:\\CDevia"));
+			proyecto.registrarPropuesta( new PropuestaGrado(""));
 			System.out.println(proyecto.darNombre());
 		} 
 		catch (Exception e) 
